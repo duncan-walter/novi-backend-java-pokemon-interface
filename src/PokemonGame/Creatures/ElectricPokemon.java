@@ -1,23 +1,24 @@
 package PokemonGame.Creatures;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ElectricPokemon extends Pokemon {
+    private final static String type = "electric";
+    private final static List<String> attacks = Arrays.asList("thunderPunch", "electroBall", "thunder", "voltTackle");
+
     public ElectricPokemon(String name, int level, int hp, String food, String sound) {
         super(name, level, hp, food, sound);
     }
 
     @Override
     public String getType() {
-        return "";
-        // TODO: Implement.
+        return type;
     }
 
     @Override
     public List<String> getAttacks() {
-        return new ArrayList<>();
-        // TODO: Implement.
+        return attacks;
     }
 
     public void thunderPunch(Pokemon attacker, Pokemon recipient) {

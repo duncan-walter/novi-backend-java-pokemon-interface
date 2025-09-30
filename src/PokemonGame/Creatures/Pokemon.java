@@ -3,35 +3,44 @@ package PokemonGame.Creatures;
 import java.util.List;
 
 public abstract class Pokemon {
+    private final String name;
+    private final int level;
+    private final String food;
+    private final String sound;
+    private int hp;
+
     public Pokemon(String name, int level, int hp, String food, String sound) {
-        // TODO: Assign variables, getters and setters.
+        this.name = name;
+        this.level = level;
+        this.food = food;
+        this.sound = sound;
+        setHp(hp);
     }
 
     public abstract String getType();
     public abstract List<String> getAttacks();
 
     public String getName() {
-        // TODO: Implement.
-        return "";
+        return this.name;
     }
 
     public int getHp() {
-        // TODO: Implement.
-        return 0;
+        return this.hp;
     }
 
     public int getLevel() {
-        // TODO: Implement.
-        return 0;
+        return this.level;
     }
 
     public String getFood() {
-        // TODO: Implement.
-        return "";
+        return this.food;
     }
 
     public String getSound() {
-        // TODO: Implement.
-        return "";
+        return this.sound;
+    }
+
+    public void setHp(int hp) {
+        this.hp = Math.max(hp, 0);
     }
 }
