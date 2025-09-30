@@ -5,13 +5,14 @@ import PokemonGame.Creatures.Pokemon;
 import java.util.List;
 
 public class PokemonGymOwner extends PokemonTrainer {
+    private final String town;
+
     public PokemonGymOwner(String name, String town, List<Pokemon> pokemons) {
         super(name, pokemons);
-        // TODO: Assign variables, getters and setters.
+        this.town = town;
     }
 
     public String getTown() {
-        return "";
-        // TODO: Implement.
+        return this.town;
     }
 }

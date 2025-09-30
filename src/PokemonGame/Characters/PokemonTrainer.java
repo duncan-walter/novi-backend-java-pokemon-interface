@@ -2,21 +2,22 @@ package PokemonGame.Characters;
 
 import PokemonGame.Creatures.Pokemon;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class PokemonTrainer {
+    private final String name;
+    private final List<Pokemon> pokemons;
+
     public PokemonTrainer(String name, List<Pokemon> pokemons) {
-        // TODO: Assign variables, getters and setters.
+        this.name = name;
+        this.pokemons = pokemons;
     }
 
     public String getName() {
-        return "";
-        // TODO: Implement.
+        return this.name;
     }
 
     public List<Pokemon> getPokemons() {
-        return new ArrayList<>();
-        // TODO: Implement.
+        return this.pokemons;
     }
 }
