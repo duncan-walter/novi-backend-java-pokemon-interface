@@ -19,6 +19,7 @@ public abstract class Pokemon {
 
     public abstract String getType();
     public abstract List<String> getAttacks();
+    public abstract Double getAttackMultiplier(Pokemon recipient);
 
     public String getName() {
         return this.name;
@@ -42,5 +43,13 @@ public abstract class Pokemon {
 
     public void setHp(int hp) {
         this.hp = Math.max(hp, 0);
+    }
+
+    public void attack(String name, int baseDamage, Pokemon attacker, Pokemon recipient) {
+        System.out.printf("%s attacks %s with %s!%n", attacker.getName(), recipient.getName(), name);
+        int damage = (int)(getAttackMultiplier(recipient) * baseDamage);
+        recipient.setHp(recipient.getHp() - damage);
+        System.out.printf("%s loses %d hp!%n", recipient.getName(), damage);
+        System.out.printf("%s now has %d hp!%n", recipient.getName(), recipient.getHp());
     }
 }
