@@ -42,7 +42,9 @@ public class GrassPokemon extends Pokemon {
     }
 
     public void leechSeed(Pokemon attacker, Pokemon recipient) {
-        attack("leech seed", 20, attacker, recipient);
+        int damageDone = attack("leech seed", 20, attacker, recipient);
+        attacker.setHp(attacker.getHp() + damageDone);
+        System.out.printf("%s leeched %d hp!%n", attacker.getName(), damageDone);
     }
 
     public void leaveBlade(Pokemon attacker, Pokemon recipient) {

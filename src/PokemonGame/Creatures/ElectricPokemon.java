@@ -42,6 +42,12 @@ public class ElectricPokemon extends Pokemon {
     }
 
     public void thunder(Pokemon attacker, Pokemon recipient) {
+        if (recipient.getType().equalsIgnoreCase("electric")) {
+            recipient.setHp(recipient.getHp() + 20);
+            System.out.printf("Thunder healed %s for 20 hp!%n", recipient.getName());
+            return;
+        }
+
         attack("thunder", 20, attacker, recipient);
     }
 

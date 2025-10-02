@@ -46,6 +46,16 @@ public class WaterPokemon extends Pokemon {
     }
 
     public void rainDance(Pokemon attacker, Pokemon recipient) {
+        switch (recipient.getType()) {
+            case "electric":
+                System.out.printf("Rain dance has no effect on %s%n", recipient.getName());
+                return;
+            case "grass":
+                System.out.printf("Rain dance healed %s for 25 hp!%n", recipient.getName());
+                recipient.setHp(recipient.getHp() + 25);
+                return;
+        }
+
         attack("rain dance", 25, attacker, recipient);
     }
 }
