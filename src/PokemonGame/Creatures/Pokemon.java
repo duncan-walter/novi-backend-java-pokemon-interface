@@ -53,4 +53,14 @@ public abstract class Pokemon {
         System.out.printf("%s now has %d hp!%n", recipient.getName(), recipient.getHp());
         return damage;
     }
+
+    public void feed(String food) {
+        if (food.equalsIgnoreCase(getFood())) {
+            System.out.printf("%s: nom nom nom! (healed for 25 hp)%n", getName());
+            setHp(getHp() + 25);
+            return;
+        }
+
+        System.out.printf("%s does not like %s!%n", getName(), food);
+    }
 }
